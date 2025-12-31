@@ -15,7 +15,7 @@ export const useTodoFilter = () => {
   }, [searchParams]);
 
   const hideCompleted = useMemo(() => {
-    return searchParams.get(QueryParams.HIDE_COMPLETED) === "true";
+    return searchParams.get(QueryParams.HIDE_COMPLETED) === "1";
   }, [searchParams]);
 
   const setSelectedUser = useCallback(
@@ -39,7 +39,7 @@ export const useTodoFilter = () => {
       setSearchParams((prev) => {
         const newParams = new URLSearchParams(prev);
         if (value) {
-          newParams.set(QueryParams.HIDE_COMPLETED, "true");
+          newParams.set(QueryParams.HIDE_COMPLETED, "1");
         } else {
           newParams.delete(QueryParams.HIDE_COMPLETED);
         }
