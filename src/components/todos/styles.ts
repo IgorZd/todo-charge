@@ -74,12 +74,3 @@ export const TodoTitle = styled.span<TodoTitleProps>`
   opacity: ${({ $completed }) => ($completed ? 0.6 : 1)};
   flex: 1;
 `;
-
-// export const EmptyState = styled.div`
-//   padding: ${({ theme }) => theme.spacing.xl};
-//   text-align: center;
-//   color: ${({ theme }) => theme.colors.text.secondary};
-//   font-size: ${({ theme }) => theme.fontSize.base};
-//   border-radius: ${({ theme }) => theme.borderRadius.md};
-//   border: 2px dashed ${({ theme }) => theme.colors.border.default};
-// `;

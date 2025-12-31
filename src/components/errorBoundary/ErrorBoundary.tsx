@@ -1,4 +1,3 @@
-import React from "react";
 import { useRouteError, isRouteErrorResponse } from "react-router-dom";
 import {
   ErrorContainer,
@@ -8,7 +7,7 @@ import {
   HomeLink,
 } from "./styles";
 
-const ErrorBoundary: React.FC = () => {
+export const ErrorBoundary = () => {
   const error = useRouteError();
 
   let errorMessage: string;
@@ -33,5 +32,3 @@ const ErrorBoundary: React.FC = () => {
     </ErrorContainer>
   );
 };
-
-export default ErrorBoundary;

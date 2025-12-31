@@ -1,7 +1,7 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import HomePage from "../../pages/home/HomePage";
 import NotFoundPage from "../../pages/notFound/NotFoundPage";
-import ErrorBoundary from "../../components/errorBoundary/ErrorBoundary";
+import { ErrorBoundary } from "../../components/errorBoundary/ErrorBoundary";
 import { RoutePath } from "../../types/routes";
 
 export const router = createBrowserRouter([

@@ -11,6 +11,7 @@ function Skeleton({ className, width, height, ...props }: SkeletonProps) {
   return (
     <StyledSkeleton
       data-slot="skeleton"
+      data-testid="skeleton-loader"
       className={className}
       width={width}
       height={height}
