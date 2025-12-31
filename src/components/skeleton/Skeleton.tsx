@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { StyledSkeleton } from "./styles";
 
-interface SkeletonProps extends React.ComponentProps<"div"> {
+interface SkeletonProps extends React.ComponentProps<"span"> {
   width?: string | number;
   height?: string | number;
 }

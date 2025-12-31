@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface StyledCardProps {
-  isSelected?: boolean;
+  $isSelected?: boolean;
 }
 
 export const StyledCard = styled.article<StyledCardProps>`
@@ -10,13 +10,13 @@ export const StyledCard = styled.article<StyledCardProps>`
   gap: ${({ theme }) => theme.spacing.lg};
   border-radius: ${({ theme }) => theme.borderRadius.xl};
   border: 1px solid
-    ${({ isSelected, theme }) =>
-      isSelected ? theme.colors.border.selected : theme.colors.border.default};
+    ${({ $isSelected, theme }) =>
+      $isSelected ? theme.colors.border.selected : theme.colors.border.default};
   padding: ${({ theme }) => theme.spacing.lg} 0;
-  box-shadow: ${({ isSelected, theme }) =>
-    isSelected ? theme.shadows.selected : theme.shadows.xs};
-  background-color: ${({ isSelected, theme }) =>
-    isSelected
+  box-shadow: ${({ $isSelected, theme }) =>
+    $isSelected ? theme.shadows.selected : theme.shadows.xs};
+  background-color: ${({ $isSelected, theme }) =>
+    $isSelected
       ? theme.colors.background.selected
       : theme.colors.background.primary};
   color: ${({ theme }) => theme.colors.text.primary};

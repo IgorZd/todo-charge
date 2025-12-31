@@ -14,7 +14,8 @@ interface StyledSkeletonProps {
   height?: string | number;
 }
 
-export const StyledSkeleton = styled.div<StyledSkeletonProps>`
+export const StyledSkeleton = styled.span<StyledSkeletonProps>`
+  display: inline-block;
   background-color: ${({ theme }) => theme.colors.background.skeleton};
   animation: ${pulse} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   border-radius: ${({ theme }) => theme.borderRadius.sm};

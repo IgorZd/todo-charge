@@ -63,14 +63,15 @@ export const TodoCheckbox = styled.input`
 `;
 
 interface TodoTitleProps {
-  completed: boolean;
+  $completed: boolean;
 }
 
 export const TodoTitle = styled.span<TodoTitleProps>`
   font-size: ${({ theme }) => theme.fontSize.base};
   color: ${({ theme }) => theme.colors.text.primary};
-  text-decoration: ${({ completed }) => (completed ? "line-through" : "none")};
-  opacity: ${({ completed }) => (completed ? 0.6 : 1)};
+  text-decoration: ${({ $completed }) =>
+    $completed ? "line-through" : "none"};
+  opacity: ${({ $completed }) => ($completed ? 0.6 : 1)};
   flex: 1;
 `;
 

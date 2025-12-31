@@ -67,7 +67,7 @@ export const TodosList: React.FC<TodosListProps> = ({
           filteredTodos?.map((todo) => (
             <TodoItem key={todo.id}>
               <TodoCheckbox type="checkbox" checked={todo.completed} readOnly />
-              <TodoTitle completed={todo.completed}>{todo.title}</TodoTitle>
+              <TodoTitle $completed={todo.completed}>{todo.title}</TodoTitle>
             </TodoItem>
           ))
         )}

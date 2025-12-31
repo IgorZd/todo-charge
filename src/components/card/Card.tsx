@@ -18,7 +18,7 @@ function Card({ className, isSelected, ...props }: CardProps) {
     <StyledCard
       data-slot="card"
       className={className}
-      isSelected={isSelected}
+      $isSelected={isSelected}
       {...props}
     />
   );
