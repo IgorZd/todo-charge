@@ -12,7 +12,8 @@ export const FilterLabel = styled.label`
 
   input[type="checkbox"] {
     cursor: pointer;
-    width: 18px;
-    height: 18px;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin: 0;
   }
 `;

@@ -34,7 +34,7 @@ export const TodoItem = styled.div`
 export const TodoCheckbox = styled.input`
   width: 1.25rem;
   height: 1.25rem;
-  flex-shrink: 0;
+  margin: 0;
 `;
 
 interface TodoTitleProps {
