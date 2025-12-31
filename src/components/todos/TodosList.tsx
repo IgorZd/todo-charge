@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { ITodo } from "../../types/api/todos";
 import { Skeleton } from "../skeleton/Skeleton";
 import { useTodoFilter } from "../../hooks/useTodoFilter";
@@ -12,6 +12,7 @@ import {
   TodoCheckbox,
   TodoTitle,
 } from "./styles";
+import { placeholderArray } from "../../consts/placeholders";
 
 interface TodosListProps {
   username: string;
@@ -25,10 +26,11 @@ export const TodosList: React.FC<TodosListProps> = ({
   isLoading,
 }) => {
   const { hideCompleted, setHideCompleted } = useTodoFilter();
-  const placeholderArray = Array.from({ length: 10 });
-  const filteredTodos = hideCompleted
-    ? todos?.filter((todo) => !todo.completed)
-    : todos;
+
+  const filteredTodos = useMemo(
+    () => (hideCompleted ? todos?.filter((todo) => !todo.completed) : todos),
+    [hideCompleted, todos]
+  );
 
   return (
     <TodosSection>

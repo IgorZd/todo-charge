@@ -1,5 +1,12 @@
 import React from "react";
-import { useRouteError, isRouteErrorResponse, Link } from "react-router-dom";
+import { useRouteError, isRouteErrorResponse } from "react-router-dom";
+import {
+  ErrorContainer,
+  ErrorTitle,
+  ErrorStatus,
+  ErrorMessage,
+  HomeLink,
+} from "./styles";
 
 const ErrorBoundary: React.FC = () => {
   const error = useRouteError();
@@ -18,14 +25,12 @@ const ErrorBoundary: React.FC = () => {
   }
 
   return (
-    <div style={{ padding: "2rem", textAlign: "center" }}>
-      <h1>Oops! Something went wrong</h1>
-      {errorStatus && <h2>Error {errorStatus}</h2>}
-      <p style={{ color: "#ff6b6b", margin: "1rem 0" }}>{errorMessage}</p>
-      <Link to="/" style={{ color: "#61dafb", textDecoration: "none" }}>
-        Go back to Home
-      </Link>
-    </div>
+    <ErrorContainer>
+      <ErrorTitle>Oops! Something went wrong</ErrorTitle>
+      {errorStatus && <ErrorStatus>Error {errorStatus}</ErrorStatus>}
+      <ErrorMessage>{errorMessage}</ErrorMessage>
+      <HomeLink to="/">Go back to Home</HomeLink>
+    </ErrorContainer>
   );
 };
 

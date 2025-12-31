@@ -13,6 +13,7 @@ import { Skeleton } from "../../components/skeleton/Skeleton";
 import { TodosList } from "../../components/todos/TodosList";
 import { useTodoFilter } from "../../hooks/useTodoFilter";
 import { Description, Title, UsersList, Wrapper } from "./styles";
+import { placeholderArray } from "../../consts/placeholders";
 
 const HomePage: React.FC = () => {
   const { selectedUser, selectUser } = useTodoFilter();
@@ -21,8 +22,6 @@ const HomePage: React.FC = () => {
     selectedUser || 0,
     !!selectedUser
   );
-
-  const placeholderArray = Array.from({ length: 10 });
 
   const handleShowTodos = (userId: number) => {
     if (selectedUser === userId) {
