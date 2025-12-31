@@ -12,6 +12,7 @@ export const useTodos = (userId: number, enabled: boolean = true) => {
     queryKey: todosQueryKeys.byUserId(userId),
     queryFn: async () => {
       const response = await todosApi.getTodosByUserId(userId);
+
       return response.data;
     },
     enabled: enabled && !!userId,

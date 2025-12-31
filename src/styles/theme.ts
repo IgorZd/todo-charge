@@ -89,6 +89,14 @@ export const theme = {
     normal: "0.2s ease-in-out",
     slow: "0.3s ease-in-out",
   },
+
+  breakpoints: {
+    sm: "640px",
+    md: "768px",
+    lg: "1024px",
+    xl: "1280px",
+    "2xl": "1536px",
+  },
 };
 
 export type Theme = typeof theme;

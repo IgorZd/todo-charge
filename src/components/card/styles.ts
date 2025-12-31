@@ -34,6 +34,10 @@ export const StyledCardHeader = styled.header`
 
   &:has([data-slot="card-action"]) {
     grid-template-columns: 1fr auto;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &.border-b {
@@ -59,6 +63,18 @@ export const StyledCardAction = styled.div`
   grid-row: 1 / span 2;
   align-self: center;
   justify-self: end;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    grid-column-start: 1;
+    grid-row: 3;
+    justify-self: stretch;
+    margin-top: ${({ theme }) => theme.spacing.md};
+    width: 100%;
+
+    button {
+      width: 100%;
+    }
+  }
 `;
 
 export const StyledCardContent = styled.section`

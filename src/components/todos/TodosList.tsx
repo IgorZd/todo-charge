@@ -13,6 +13,7 @@ import {
   TodoTitle,
 } from "./styles";
 import { placeholderArray } from "../../consts/placeholders";
+import { EmptyState } from "../../pages/home/styles";
 
 interface TodosListProps {
   username: string;
@@ -35,16 +36,19 @@ export const TodosList: React.FC<TodosListProps> = ({
   return (
     <TodosSection>
       <TodosHeader>{username}'s TODOs</TodosHeader>
-      <FilterContainer>
-        <FilterLabel>
-          <input
-            type="checkbox"
-            checked={hideCompleted}
-            onChange={(e) => setHideCompleted(e.target.checked)}
-          />
-          Hide completed
-        </FilterLabel>
-      </FilterContainer>
+      {filteredTodos && filteredTodos.length > 0 && (
+        <FilterContainer>
+          <FilterLabel>
+            <input
+              type="checkbox"
+              checked={hideCompleted}
+              onChange={(e) => setHideCompleted(e.target.checked)}
+            />
+            Hide completed
+          </FilterLabel>
+        </FilterContainer>
+      )}
+
       <TodosContainer>
         {isLoading ? (
           <>
@@ -55,6 +59,10 @@ export const TodosList: React.FC<TodosListProps> = ({
               </TodoItem>
             ))}
           </>
+        ) : filteredTodos && filteredTodos.length === 0 ? (
+          <EmptyState>
+            {hideCompleted ? "No incomplete todos" : "No todos found"}
+          </EmptyState>
         ) : (
           filteredTodos?.map((todo) => (
             <TodoItem key={todo.id}>

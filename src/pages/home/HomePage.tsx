@@ -12,7 +12,7 @@ import { Button } from "../../components/button/Button";
 import { Skeleton } from "../../components/skeleton/Skeleton";
 import { TodosList } from "../../components/todos/TodosList";
 import { useTodoFilter } from "../../hooks/useTodoFilter";
-import { Description, Title, UsersList, Wrapper } from "./styles";
+import { Description, Title, UsersList, Wrapper, EmptyState } from "./styles";
 import { placeholderArray } from "../../consts/placeholders";
 
 const HomePage: React.FC = () => {
@@ -57,6 +57,8 @@ const HomePage: React.FC = () => {
               </Card>
             ))}
           </>
+        ) : users && users.length === 0 ? (
+          <EmptyState>No users found</EmptyState>
         ) : (
           users?.map((user) => (
             <React.Fragment key={user.id}>
