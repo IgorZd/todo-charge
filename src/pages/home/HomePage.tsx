@@ -12,8 +12,9 @@ import { Button } from "../../components/button/Button";
 import { Skeleton } from "../../components/skeleton/Skeleton";
 import { TodosList } from "../../components/todos/TodosList";
 import { useTodoFilter } from "../../hooks/useTodoFilter";
-import { Description, Title, UsersList, Wrapper, EmptyState } from "./styles";
+import { Description, Title, UsersList, Wrapper } from "./styles";
 import { placeholderArray } from "../../consts/placeholders";
+import { EmptyState } from "../../components/emptyState/EmptyState";
 
 const HomePage: React.FC = () => {
   const { selectedUser, selectUser } = useTodoFilter();

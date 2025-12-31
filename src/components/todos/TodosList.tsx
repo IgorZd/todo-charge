@@ -5,15 +5,14 @@ import { useTodoFilter } from "../../hooks/useTodoFilter";
 import {
   TodosSection,
   TodosHeader,
-  FilterContainer,
-  FilterLabel,
   TodosContainer,
   TodoItem,
   TodoCheckbox,
   TodoTitle,
 } from "./styles";
 import { placeholderArray } from "../../consts/placeholders";
-import { EmptyState } from "../../pages/home/styles";
+import { EmptyState } from "../emptyState/EmptyState";
+import { FilterToggle } from "../filterToggle/FilterToggle";
 
 interface TodosListProps {
   username: string;
@@ -37,16 +36,7 @@ export const TodosList: React.FC<TodosListProps> = ({
     <TodosSection>
       <TodosHeader>{username}'s TODOs</TodosHeader>
       {filteredTodos && filteredTodos.length > 0 && (
-        <FilterContainer>
-          <FilterLabel>
-            <input
-              type="checkbox"
-              checked={hideCompleted}
-              onChange={(e) => setHideCompleted(e.target.checked)}
-            />
-            Hide completed
-          </FilterLabel>
-        </FilterContainer>
+        <FilterToggle checked={hideCompleted} onChange={setHideCompleted} />
       )}
 
       <TodosContainer>

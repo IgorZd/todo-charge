@@ -1,15 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Container, Title, Message, StyledLink } from "./styles";
 
 const NotFoundPage: React.FC = () => {
   return (
-    <div style={{ padding: "2rem", textAlign: "center" }}>
-      <h1>404 - Page Not Found</h1>
-      <p>The page you're looking for doesn't exist.</p>
-      <Link to="/" style={{ color: "#61dafb", textDecoration: "none" }}>
-        Go back to Home
-      </Link>
-    </div>
+    <Container>
+      <Title>404 - Page Not Found</Title>
+      <Message>The page you're looking for doesn't exist.</Message>
+      <StyledLink to="/">Go back to Home</StyledLink>
+    </Container>
   );
 };
 

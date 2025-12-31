@@ -15,31 +15,6 @@ export const TodosHeader = styled.h2`
   margin: 0 0 ${({ theme }) => theme.spacing.lg} 0;
 `;
 
-export const FilterContainer = styled.div`
-  width: max-content;
-  margin-bottom: ${({ theme }) => theme.spacing.md};
-`;
-
-export const FilterLabel = styled.label`
-  display: flex;
-  align-items: center;
-  gap: ${({ theme }) => theme.spacing.sm};
-  font-size: ${({ theme }) => theme.fontSize.base};
-  color: ${({ theme }) => theme.colors.text.secondary};
-  cursor: pointer;
-  user-select: none;
-
-  input[type="checkbox"] {
-    width: 1.25rem;
-    height: 1.25rem;
-    cursor: pointer;
-  }
-
-  &:hover {
-    color: ${({ theme }) => theme.colors.text.primary};
-  }
-`;
-
 export const TodosContainer = styled.div`
   display: flex;
   flex-direction: column;
