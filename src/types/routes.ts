@@ -5,6 +5,6 @@ export enum RoutePath {
 
 export interface RouteConfig {
   path: string;
-  element: JSX.Element;
-  errorElement?: JSX.Element;
+  element: React.ReactElement;
+  errorElement?: React.ReactElement;
 }
